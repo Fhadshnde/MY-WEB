@@ -5,7 +5,6 @@ import {
   FacebookRounded,
   Instagram,
   LinkedIn,
-  Twitter,
 } from "@mui/icons-material";
 
 const FooterContainer = styled.div`

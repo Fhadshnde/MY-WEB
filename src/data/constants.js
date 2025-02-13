@@ -1,5 +1,3 @@
-import Project_1 from "../images/Project-1.jpg";
-import HeroImg from "../images/HeroImage.jpg";
 
 export const Bio = {
   name: "Fahad Wisam",
