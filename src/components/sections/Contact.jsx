@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
-  position: rlative;
+  justify-content: center;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -104,8 +104,18 @@ const ContactButton = styled.input`
   font-weight: 600;
 `;
 
+const ConfirmationMessage = styled.div`
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text_primary};
+  text-align: center;
+`;
+
 const Contact = () => {
   const form = useRef();
+  const [isMessageSent, setIsMessageSent] = useState(false);
+
   const handelSubmit = (e) => {
     e.preventDefault();
     emailjs
@@ -117,33 +127,38 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          alert("Message Sent");
-          form.current.result();
+          setIsMessageSent(true); // استخدم setIsMessageSent لتحديث الحالة
+          form.current.reset(); 
         },
         (error) => {
-          alert(error);
+          alert("Failed to send message: " + error.text);
         }
       );
   };
+  const handleClick = () => {
+    alert("Your message has been sent successfully! 🎉"); // هنا تظهر الرسالة عند النقر على الزر
+  };  
+
   return (
     <Container id="Education">
       <Wrapper>
         <Title>Contact</Title>
-        <Desc
-          style={{
-            marginBottom: "40px",
-          }}
-        >
+        <Desc style={{ marginBottom: "40px" }}>
           Feel free to reach out to me for any questions or opportunities!
         </Desc>
         <ContactForm onSubmit={handelSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" name="message" rows={4} />
-          <ContactButton type="submit" value="Send" />
+          <ContactInput placeholder="Your Email" name="from_email" required />
+          <ContactInput placeholder="Your Name" name="from_name" required />
+          <ContactInput placeholder="Subject" name="subject" required />
+          <ContactInputMessage placeholder="Message" name="message" rows={4} required />
+          <ContactButton type="submit" value="Send" onClick={handleClick} />
         </ContactForm>
+        {isMessageSent && (
+          <ConfirmationMessage>
+            Your message has been sent successfully! 🎉
+          </ConfirmationMessage>
+        )}
       </Wrapper>
     </Container>
   );
