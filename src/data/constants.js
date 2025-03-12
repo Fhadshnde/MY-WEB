@@ -131,15 +131,15 @@ export const projects = [
       "React Flow",
     ],
     category: "Front End",
-    github: "https://github.com/rishavchanda/DecisionHub",
+    github: "https://github.com/Fhadshnde/Brainwave.git",
     webapp: "https://brainwaveeweb.netlify.app/",
   },
   {
     id: 9,
-    title: "Trackify",
+    title: "Bank Modren",
     date: "Jun 2023 - Jul 2023",
     description:
-      "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:	#Email: testemployee@gmail.com	#Password- 123@Testemployee",
+      "Bank Modren",
     image:
       "https://files.catbox.moe/dvefd4.jpg",
     tags: [
@@ -156,36 +156,49 @@ export const projects = [
       "Redux",
     ],
     category: "Front End",
-    github: "https://github.com/rishavchanda/Trackify",
+    github: "https://github.com/Fhadshnde/Bank.git",
     webapp: "https://hoobankmodren.netlify.app/",
   },
+  // {
+  //   id: 0,
+  //   title: "Social Media App",
+  //   date: "Apr 2023 - May 2023",
+  //   description:
+  //     "Developed a full-stack web application is a social media that allows users to create, share posts",
+  //   image:
+  //     "https://files.catbox.moe/667lnu.jpg",
+  //   tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
+  //   category: "full stack",
+  //   github: "https://github.com/rishavchanda/Podstream",
+  //   webapp: "https://social-front-henna.vercel.app",
+  //   member: [
+  //     {
+  //       name: "Rishav Chanda",
+  //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
+  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+  //       github: "https://github.com/rishavchanda/",
+  //     },
+  //     {
+  //       name: "Upasana Chaudhuri",
+  //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
+  //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+  //       github: "https://github.com/upasana0710",
+  //       webapp: "https://social-front-henna.vercel.app"
+  //     },
+  //   ],
+  // },
   {
     id: 0,
-    title: "Social Media App",
+    title: "E-COMMERCE",
     date: "Apr 2023 - May 2023",
     description:
-      "Developed a full-stack web application is a social media that allows users to create, share posts",
+      "Developed a full-stack web application is a E-COMMERCE",
     image:
-      "https://files.catbox.moe/667lnu.jpg",
+      "https://files.catbox.moe/uqol36.png",
     tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
     category: "full stack",
     github: "https://github.com/rishavchanda/Podstream",
     webapp: "https://social-front-henna.vercel.app",
-    member: [
-      {
-        name: "Rishav Chanda",
-        img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-        linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-        github: "https://github.com/rishavchanda/",
-      },
-      {
-        name: "Upasana Chaudhuri",
-        img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-        linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-        github: "https://github.com/upasana0710",
-        webapp: "https://social-front-henna.vercel.app"
-      },
-    ],
   },
   {
     id: 1,
@@ -204,20 +217,20 @@ export const projects = [
       "NodeMailer",
     ],
     category: "full stack",
-    github: "https://github.com/rishavchanda/Project-Management-App",
+    github: "https://github.com/Fhadshnde/booking-mern.git",
     webapp: "https://teal-cannoli-399069.netlify.app/",
   },
   {
     id: 2,
-    title: "Brain Tumor Detection",
+    title: "Dagtal-Agency",
     date: "Jan 2023 - Mar 2023",
     description:
-      "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
+      "Dagtal-Agency",
     image:
       "https://files.catbox.moe/ztnq8n.jpg",
     tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
     category: "Next.js",
-    github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
+    github: "https://github.com/Fhadshnde/Dagtal-Agency.git",
     webapp: "https://fastidious-hamster-b5e797.netlify.app/",
 
   },

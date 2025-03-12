@@ -84,8 +84,8 @@ const ProjectCard = ({ project }) => {
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
       </Details>
-      <Button href={project.webapp} target="_blank">
-        View Live
+      <Button href={project.github} target="_blank">
+        View Code
       </Button>
     </Card>
   );
