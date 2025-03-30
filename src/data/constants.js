@@ -119,6 +119,40 @@ export const skills = [
 export const projects = [
   {
     id: 11,
+    title: "E-Commerce-hear-product ",
+    date: "Jan 2024 - Dec 2023",
+    description:
+      "",
+    image:
+    "https://files.catbox.moe/de5kbv.jpg",
+    tags: [
+      "React Js",
+      "Redux",
+      "React Flow",
+    ],
+    category: "Front End",
+    github: "https://github.com/Fhadshnde/E-Commerce-Hear-product",
+    webapp: "https://e-commerce-hear-product.vercel.app/",
+  },
+  {
+    id: 11,
+    title: "Hotel Booking",
+    date: "Jan 2024 - Dec 2023",
+    description:
+      "",
+    image:
+    "https://files.catbox.moe/sk2j29.jpg",
+    tags: [
+      "React Js",
+      "Redux",
+      "React Flow",
+    ],
+    category: "Front End",
+    github: "https://github.com/Fhadshnde/Hotel-Booking",
+    webapp: "https://hotel-booking-dusky-delta.vercel.app/",
+  },
+  {
+    id: 11,
     title: "Brainwave ",
     date: "Jan 2024 - Dec 2023",
     description:
@@ -136,7 +170,7 @@ export const projects = [
   },
   {
     id: 9,
-    title: "Trackify",
+    title: "Bank modren",
     date: "Jun 2023 - Jul 2023",
     description:
       "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:	#Email: testemployee@gmail.com	#Password- 123@Testemployee",
@@ -159,67 +193,67 @@ export const projects = [
     github: "https://github.com/rishavchanda/Trackify",
     webapp: "https://hoobankmodren.netlify.app/",
   },
-  {
-    id: 0,
-    title: "Social Media App",
-    date: "Apr 2023 - May 2023",
-    description:
-      "Developed a full-stack web application is a social media that allows users to create, share posts",
-    image:
-      "https://files.catbox.moe/667lnu.jpg",
-    tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
-    category: "full stack",
-    github: "https://github.com/rishavchanda/Podstream",
-    webapp: "https://social-front-henna.vercel.app",
-    member: [
-      {
-        name: "Rishav Chanda",
-        img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-        linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-        github: "https://github.com/rishavchanda/",
-      },
-      {
-        name: "Upasana Chaudhuri",
-        img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-        linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-        github: "https://github.com/upasana0710",
-        webapp: "https://social-front-henna.vercel.app"
-      },
-    ],
-  },
-  {
-    id: 1,
-    title: "Booking Hotel",
-    date: "Oct 2022 - Jan 2023",
-    description:
-      " Developed a web application for booking hotels with features like user authentication, hotel search",
-    image:
-      "https://files.catbox.moe/onkdko.jpg",
-    tags: [
-      "React Js",
-      "MongoDb",
-      "Node Js",
-      "Express Js",
-      "Redux",
-      "NodeMailer",
-    ],
-    category: "full stack",
-    github: "https://github.com/rishavchanda/Project-Management-App",
-    webapp: "https://teal-cannoli-399069.netlify.app/",
-  },
-  {
-    id: 2,
-    title: "Brain Tumor Detection",
-    date: "Jan 2023 - Mar 2023",
-    description:
-      "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
-    image:
-      "https://files.catbox.moe/ztnq8n.jpg",
-    tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
-    category: "Next.js",
-    github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
-    webapp: "https://fastidious-hamster-b5e797.netlify.app/",
+  // {
+  //   id: 0,
+  //   title: "Social Media App",
+  //   date: "Apr 2023 - May 2023",
+  //   description:
+  //     "Developed a full-stack web application is a social media that allows users to create, share posts",
+  //   image:
+  //     "https://files.catbox.moe/667lnu.jpg",
+  //   tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
+  //   category: "full stack",
+  //   github: "https://github.com/rishavchanda/Podstream",
+  //   webapp: "https://social-front-henna.vercel.app",
+  //   member: [
+  //     {
+  //       name: "Rishav Chanda",
+  //       img: "https://avatars.githubusercontent.com/u/64485885?v=4",
+  //       linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
+  //       github: "https://github.com/rishavchanda/",
+  //     },
+  //     {
+  //       name: "Upasana Chaudhuri",
+  //       img: "https://avatars.githubusercontent.com/u/100614635?v=4",
+  //       linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
+  //       github: "https://github.com/upasana0710",
+  //       webapp: "https://social-front-henna.vercel.app"
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: 1,
+  //   title: "Booking Hotel",
+  //   date: "Oct 2022 - Jan 2023",
+  //   description:
+  //     " Developed a web application for booking hotels with features like user authentication, hotel search",
+  //   image:
+  //     "https://files.catbox.moe/onkdko.jpg",
+  //   tags: [
+  //     "React Js",
+  //     "MongoDb",
+  //     "Node Js",
+  //     "Express Js",
+  //     "Redux",
+  //     "NodeMailer",
+  //   ],
+  //   category: "full stack",
+  //   github: "https://github.com/rishavchanda/Project-Management-App",
+  //   webapp: "https://teal-cannoli-399069.netlify.app/",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Brain Tumor Detection",
+  //   date: "Jan 2023 - Mar 2023",
+  //   description:
+  //     "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
+  //   image:
+  //     "https://files.catbox.moe/ztnq8n.jpg",
+  //   tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
+  //   category: "Next.js",
+  //   github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
+  //   webapp: "https://fastidious-hamster-b5e797.netlify.app/",
 
-  },
+  // },
 ];
 

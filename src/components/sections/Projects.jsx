@@ -111,9 +111,9 @@ const Projects = () => {
             data-active={toggle === "all"}
             onClick={() => setToggle("all")}
           >
-            ALL
+            ALL Project
           </ToggleButton>
-          <Divider />
+          {/* <Divider />
           <ToggleButton
             data-active={toggle === "Front End"} 
             onClick={() => setToggle("Front End")}
@@ -127,13 +127,13 @@ const Projects = () => {
           >
             Full Stack
           </ToggleButton>
-          <Divider />
-          <ToggleButton
+          <Divider /> */}
+          {/* <ToggleButton
             data-active={toggle === "Next.js"}
             onClick={() => setToggle("Next.js")}
           >
             Next.js
-          </ToggleButton>
+          </ToggleButton> */}
         </ToggleButtonGroup>
 
         <CardContainer>

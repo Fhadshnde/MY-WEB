@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Card = styled.div`
   width: 330px;
-  height: 490px;
+  height: 420px; /* Adjusted height to fit the date field */
   background-color: ${({ theme }) => theme.card};
   cursor: pointer;
   border-radius: 10px;
@@ -39,8 +39,13 @@ const Details = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 8px; /* Added gap to separate date and title */
   padding: 0px 2px;
+`;
+const Date = styled.div`
+  font-size: 16px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.text_secondary + 99}; /* Slightly dimmed color */
 `;
 const Title = styled.div`
   font-size: 20px;
@@ -67,7 +72,6 @@ const Description = styled.div`
   text-overflow: ellipsis;
 `;
 
-
 const Button = styled.a`
   color: ${({ theme }) => theme.primary};
   text-decoration: none;
@@ -81,11 +85,12 @@ const ProjectCard = ({ project }) => {
       <Image src={project.image} />
       <Tags></Tags>
       <Details>
+        <Date>{project.date}</Date> {/* Added the date field */}
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
       </Details>
       <Button href={project.webapp} target="_blank">
-        View Live
+        View live demo
       </Button>
     </Card>
   );
