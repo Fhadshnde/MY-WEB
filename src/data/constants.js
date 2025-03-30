@@ -171,7 +171,6 @@ export const projects = [
   {
     id: 9,
     title: "Bank modren",
-    title: "Bank Modren",
     date: "Jun 2023 - Jul 2023",
     description:
       "Bank Modren",
