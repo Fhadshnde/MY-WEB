@@ -79,10 +79,7 @@ const ToggleButton = styled.div.attrs(props => ({
   background: ${({ "data-active": active, theme }) => (active === "true" ? theme.primary + 20 : "none")};
 `;
 
-const Divider = styled.div`
-  width: 1.5px;
-  background: ${({ theme }) => theme.primary};
-`;
+
 
 const CardContainer = styled.div`
   display: flex;
@@ -113,27 +110,7 @@ const Projects = () => {
           >
             ALL Project
           </ToggleButton>
-          {/* <Divider />
-          <ToggleButton
-            data-active={toggle === "Front End"} 
-            onClick={() => setToggle("Front End")}
-          >
-            Front End
-          </ToggleButton>
-          <Divider />
-          <ToggleButton
-            data-active={toggle === "full stack"}
-            onClick={() => setToggle("full stack")}
-          >
-            Full Stack
-          </ToggleButton>
-          <Divider /> */}
-          {/* <ToggleButton
-            data-active={toggle === "Next.js"}
-            onClick={() => setToggle("Next.js")}
-          >
-            Next.js
-          </ToggleButton> */}
+
         </ToggleButtonGroup>
 
         <CardContainer>
