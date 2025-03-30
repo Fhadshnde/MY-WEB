@@ -165,15 +165,16 @@ export const projects = [
       "React Flow",
     ],
     category: "Front End",
-    github: "https://github.com/rishavchanda/DecisionHub",
+    github: "https://github.com/Fhadshnde/Brainwave.git",
     webapp: "https://brainwaveeweb.netlify.app/",
   },
   {
     id: 9,
     title: "Bank modren",
+    title: "Bank Modren",
     date: "Jun 2023 - Jul 2023",
     description:
-      "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:	#Email: testemployee@gmail.com	#Password- 123@Testemployee",
+      "Bank Modren",
     image:
       "https://files.catbox.moe/dvefd4.jpg",
     tags: [
@@ -190,7 +191,7 @@ export const projects = [
       "Redux",
     ],
     category: "Front End",
-    github: "https://github.com/rishavchanda/Trackify",
+    github: "https://github.com/Fhadshnde/Bank.git",
     webapp: "https://hoobankmodren.netlify.app/",
   },
   // {
@@ -253,7 +254,52 @@ export const projects = [
   //   category: "Next.js",
   //   github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
   //   webapp: "https://fastidious-hamster-b5e797.netlify.app/",
-
+  {
+    id: 0,
+    title: "E-COMMERCE",
+    date: "Apr 2023 - May 2023",
+    description:
+      "Developed a full-stack web application is a E-COMMERCE",
+    image:
+      "https://files.catbox.moe/uqol36.png",
+    tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
+    category: "full stack",
+    github: "https://github.com/rishavchanda/Podstream",
+    webapp: "https://social-front-henna.vercel.app",
+  },
+  {
+    id: 1,
+    title: "Booking Hotel",
+    date: "Oct 2022 - Jan 2023",
+    description:
+      " Developed a web application for booking hotels with features like user authentication, hotel search",
+    image:
+      "https://files.catbox.moe/onkdko.jpg",
+    tags: [
+      "React Js",
+      "MongoDb",
+      "Node Js",
+      "Express Js",
+      "Redux",
+      "NodeMailer",
+    ],
+    category: "full stack",
+    github: "https://github.com/Fhadshnde/booking-mern.git",
+    webapp: "https://teal-cannoli-399069.netlify.app/",
+  },
+  {
+    id: 2,
+    title: "Dagtal-Agency",
+    date: "Jan 2023 - Mar 2023",
+    description:
+      "Dagtal-Agency",
+    image:
+      "https://files.catbox.moe/ztnq8n.jpg",
+    tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
+    category: "Next.js",
+    github: "https://github.com/Fhadshnde/Dagtal-Agency.git",
+    webapp: "https://fastidious-hamster-b5e797.netlify.app/",
+  },
   // },
 ];
 
