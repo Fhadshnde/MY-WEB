@@ -62,6 +62,14 @@ const Blob = styled.div`
   filter: blur(110px);
   mix-blend-mode: ${({ theme }) => theme.glowBlend};
   animation: ${drift} ${({ dur }) => dur || "22s"} ease-in-out infinite;
+
+  /* Animated 110px blur over huge elements crashes mobile GPUs — make it
+     cheap and static on phones. */
+  @media (max-width: 960px) {
+    filter: blur(60px);
+    animation: none;
+    opacity: 0.7;
+  }
 `;
 
 const Body = styled.div`
