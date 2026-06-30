@@ -12,7 +12,7 @@ import {
 import * as THREE from "three";
 
 /* Central iridescent crystal — glassy/metallic with subtle distortion */
-const Crystal = ({ color, accent }) => {
+const Crystal = ({ color, accent, lowPower }) => {
   const inner = useRef();
   const shell = useRef();
 
@@ -32,7 +32,7 @@ const Crystal = ({ color, accent }) => {
     <group>
       {/* inner solid crystal */}
       <Float speed={1.6} rotationIntensity={0.6} floatIntensity={1.1}>
-        <Icosahedron ref={inner} args={[1, 4]} scale={1.35}>
+        <Icosahedron ref={inner} args={[1, lowPower ? 3 : 4]} scale={1.35}>
           <MeshDistortMaterial
             color={color}
             distort={0.28}
@@ -99,7 +99,7 @@ const Rig = ({ children }) => {
   return <group ref={group}>{children}</group>;
 };
 
-const Scene = ({ color, accent }) => {
+const Scene = ({ color, accent, lowPower }) => {
   const sparkleColors = useMemo(() => [color, accent], [color, accent]);
   return (
     <>
@@ -109,11 +109,11 @@ const Scene = ({ color, accent }) => {
       <pointLight position={[5, 3, -3]} intensity={5} color={color} distance={12} />
 
       <Rig>
-        <Crystal color={color} accent={accent} />
+        <Crystal color={color} accent={accent} lowPower={lowPower} />
         <OrbitRing color={accent} radius={2.6} speed={0.22} tilt={1.2} />
         <OrbitRing color={color} radius={2.95} speed={-0.16} tilt={0.5} />
         <Sparkles
-          count={60}
+          count={lowPower ? 28 : 60}
           scale={[7, 5, 5]}
           size={2.4}
           speed={0.4}
@@ -121,7 +121,7 @@ const Scene = ({ color, accent }) => {
           color={sparkleColors[0]}
         />
         <Sparkles
-          count={40}
+          count={lowPower ? 18 : 40}
           scale={[8, 6, 4]}
           size={1.6}
           speed={0.25}
@@ -131,7 +131,7 @@ const Scene = ({ color, accent }) => {
       </Rig>
 
       {/* In-scene reflections (no network fetch) for the metallic crystal */}
-      <Environment resolution={256}>
+      <Environment resolution={lowPower ? 128 : 256}>
         <Lightformer
           intensity={2}
           position={[0, 4, -6]}
@@ -155,16 +155,21 @@ const Scene = ({ color, accent }) => {
   );
 };
 
-const Hero3D = ({ color = "#7c3aed", accent = "#38bdf8" }) => {
+const Hero3D = ({ color = "#7c3aed", accent = "#38bdf8", lowPower = false }) => {
   return (
     <Canvas
       camera={{ position: [0, 0, 8.5], fov: 42 }}
-      dpr={[1, 1.5]}
-      gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
+      dpr={lowPower ? 1 : [1, 1.5]}
+      gl={{
+        alpha: true,
+        antialias: !lowPower,
+        powerPreference: "high-performance",
+        failIfMajorPerformanceCaveat: false,
+      }}
       style={{ background: "transparent" }}
     >
       <Suspense fallback={null}>
-        <Scene color={color} accent={accent} />
+        <Scene color={color} accent={accent} lowPower={lowPower} />
       </Suspense>
     </Canvas>
   );

@@ -22,14 +22,14 @@ import {
 const Hero3D = lazy(() => import("../Hero3D"));
 
 /**
- * The WebGL hero is heavy for mobile GPUs and can lose its context there,
- * which previously crashed the page to a black screen. Only enable it on
- * wider screens that actually support WebGL; everything else gets the
- * lightweight CSS fallback.
+ * The 3D hero runs on every device that supports WebGL — mobile included.
+ * On small screens it renders in a lighter "low power" mode (lower dpr, no
+ * antialiasing, smaller reflection map, fewer sparkles) so it keeps the same
+ * look without exhausting mobile GPU memory. If WebGL is missing or the
+ * context still fails, the ErrorBoundary swaps in the CSS fallback.
  */
-const can3D = () => {
+const hasWebGL = () => {
   if (typeof window === "undefined") return false;
-  if (window.matchMedia("(max-width: 960px)").matches) return false;
   try {
     const canvas = document.createElement("canvas");
     return !!(
@@ -40,6 +40,10 @@ const can3D = () => {
     return false;
   }
 };
+
+const isSmallScreen = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(max-width: 960px)").matches;
 
 const TECH = [
   { name: "React", Icon: SiReact },
@@ -349,10 +353,11 @@ const Tech = styled.span`
 
 const Hero = () => {
   const theme = useTheme();
-  const [enable3D, setEnable3D] = useState(can3D);
+  const [enable3D] = useState(hasWebGL);
+  const [lowPower, setLowPower] = useState(isSmallScreen);
 
   useEffect(() => {
-    const onResize = () => setEnable3D(can3D());
+    const onResize = () => setLowPower(isSmallScreen());
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
@@ -427,7 +432,11 @@ const Hero = () => {
             {enable3D ? (
               <ErrorBoundary fallback={fallback}>
                 <Suspense fallback={fallback}>
-                  <Hero3D color={theme.primary} accent={theme.accent} />
+                  <Hero3D
+                    color={theme.primary}
+                    accent={theme.accent}
+                    lowPower={lowPower}
+                  />
                 </Suspense>
               </ErrorBoundary>
             ) : (
