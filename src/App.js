@@ -74,10 +74,10 @@ const Body = styled.div`
 `;
 
 function App() {
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("light");
 
   useEffect(() => {
-    // Dark is the default; only an explicit saved choice can switch to light.
+    // Light is the default; only an explicit saved choice can switch to dark.
     const saved = localStorage.getItem("theme-mode");
     if (saved === "light" || saved === "dark") {
       setMode(saved);
