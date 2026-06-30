@@ -1,6 +1,8 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import styled, { keyframes, useTheme } from "styled-components";
 import { Bio } from "../../data/constants";
+import ErrorBoundary from "../ErrorBoundary";
+import HeroVisualFallback from "../HeroVisualFallback";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
@@ -18,6 +20,26 @@ import {
 } from "react-icons/si";
 
 const Hero3D = lazy(() => import("../Hero3D"));
+
+/**
+ * The WebGL hero is heavy for mobile GPUs and can lose its context there,
+ * which previously crashed the page to a black screen. Only enable it on
+ * wider screens that actually support WebGL; everything else gets the
+ * lightweight CSS fallback.
+ */
+const can3D = () => {
+  if (typeof window === "undefined") return false;
+  if (window.matchMedia("(max-width: 960px)").matches) return false;
+  try {
+    const canvas = document.createElement("canvas");
+    return !!(
+      window.WebGLRenderingContext &&
+      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+    );
+  } catch {
+    return false;
+  }
+};
 
 const TECH = [
   { name: "React", Icon: SiReact },
@@ -327,6 +349,18 @@ const Tech = styled.span`
 
 const Hero = () => {
   const theme = useTheme();
+  const [enable3D, setEnable3D] = useState(can3D);
+
+  useEffect(() => {
+    const onResize = () => setEnable3D(can3D());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const fallback = (
+    <HeroVisualFallback color={theme.primary} accent={theme.accent} />
+  );
+
   return (
     <HeroContainer id="About">
       <Inner>
@@ -390,9 +424,15 @@ const Hero = () => {
 
         <Right>
           <Stage>
-            <Suspense fallback={null}>
-              <Hero3D color={theme.primary} accent={theme.accent} />
-            </Suspense>
+            {enable3D ? (
+              <ErrorBoundary fallback={fallback}>
+                <Suspense fallback={fallback}>
+                  <Hero3D color={theme.primary} accent={theme.accent} />
+                </Suspense>
+              </ErrorBoundary>
+            ) : (
+              fallback
+            )}
           </Stage>
 
           <Badge

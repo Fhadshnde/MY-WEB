@@ -159,8 +159,8 @@ const Hero3D = ({ color = "#7c3aed", accent = "#38bdf8" }) => {
   return (
     <Canvas
       camera={{ position: [0, 0, 8.5], fov: 42 }}
-      dpr={[1, 2]}
-      gl={{ alpha: true, antialias: true }}
+      dpr={[1, 1.5]}
+      gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       style={{ background: "transparent" }}
     >
       <Suspense fallback={null}>
